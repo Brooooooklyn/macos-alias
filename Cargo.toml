@@ -1,0 +1,26 @@
+[package]
+edition = "2021"
+name = "napi-rs_macos-alias"
+version = "0.0.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+byteorder = "1"
+core-foundation = "0.9"
+chrono = "0.4"
+napi = { version = "2", default-features = false, features = ["napi3"] }
+napi-derive = "2"
+once_cell = "1"
+
+[dev-dependencies]
+base64 = "0.21"
+
+[build-dependencies]
+napi-build = "2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = "symbols"
