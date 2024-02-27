@@ -1,0 +1,40 @@
+{
+  "name": "@napi-rs/macos-alias",
+  "version": "0.0.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "napi": {
+    "name": "macos-alias",
+    "triples": {
+      "defaults": false,
+      "additional": [
+        "universal-apple-darwin"
+      ]
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@napi-rs/cli": "^2.17.0",
+    "ava": "^5.1.1",
+    "macos-alias": "^0.2.11"
+  },
+  "os": [
+    "darwin"
+  ],
+  "ava": {
+    "timeout": "3m"
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release",
+    "build:debug": "napi build --platform",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "ava",
+    "universal": "napi universal",
+    "version": "napi version"
+  },
+  "packageManager": "yarn@4.1.0"
+}

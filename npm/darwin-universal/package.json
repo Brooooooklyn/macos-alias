@@ -1,0 +1,15 @@
+{
+  "name": "@napi-rs/macos-alias-darwin-universal",
+  "version": "0.0.0",
+  "os": [
+    "darwin"
+  ],
+  "main": "macos-alias.darwin-universal.node",
+  "files": [
+    "macos-alias.darwin-universal.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}
