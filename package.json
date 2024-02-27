@@ -12,6 +12,10 @@
       ]
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brooooooklyn/macos-alias.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@napi-rs/cli": "^2.17.0",
