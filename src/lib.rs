@@ -219,15 +219,10 @@ fn find_volume<'a, P: AsRef<OsStr> + ?Sized>(
 }
 
 fn utf16be(s: &str) -> Vec<u8> {
-  let mut b: Vec<u16> = s.encode_utf16().collect();
-  for chunk in b.chunks_mut(2) {
-    if let [a, b] = chunk {
-      std::mem::swap(a, b);
-    }
-  }
+  let b: Vec<u16> = s.encode_utf16().collect();
   let mut result: Vec<u8> = Vec::new();
   for &number in &b {
-    result.extend_from_slice(&number.to_ne_bytes());
+    result.extend_from_slice(&number.to_be_bytes());
   }
   result
 }
